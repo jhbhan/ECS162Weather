@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+<head>
+	<title>Forecast</title>
+	<meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="weather.css">
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:300" rel = "stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,500" rel = "stylesheet">
+    
+
+</head>
+
+<body>
+	<header>
+		<div>
+			<p style="color:white">Local Weather Six Hour Forecast</p>
+			<p>Northern California with doppler radar</p>
+			<div class="search">
+				<p>Forecast for</p>
+				<input id="city" type="text" name="location" placeholder="Davis">
+				<button id = "submit" onclick="newRequest()">submit</button>
+			</div>
+			<div class = "current_weather">
+				<p id = "current_time">time</p>
+				<p id = "current_picture">picture</p>
+				<p id = "current_temperature">temperature</p>
+			</div>		
+		</div>
+		<div class="picture">
+			picture
+		</div>
+	</header>
+	<main>
+		<div id="hour_update">
+			<p>time</p>
+			<p>picture</p>
+			<p>temperature</p>
+		</div>
+		<div id="hour_update">
+			<p>time</p>
+			<p>picture</p>
+			<p>temperature</p>
+		</div>
+		<div id="hour_update">
+			<p>time</p>
+			<p>picture</p>
+			<p>temperature</p>
+		</div>
+		<div id="hour_update">
+			<p>time</p>
+			<p>picture</p>
+			<p>temperature</p>
+		</div>
+		<div id="hour_update">
+			<p>time</p>
+			<p>picture</p>
+			<p>temperature</p>
+		</div>
+	</main>
+
+</body>
+
+<script src="weather.js"></script>
+
+</html>

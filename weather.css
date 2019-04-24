@@ -1,0 +1,38 @@
+body{
+	display: flex;
+	flex-direction: column;
+}
+
+header{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	background-image: linear-gradient(rgb(73,138,220),rgb(98,59,156));
+	font-family: 'IBM Plex Sans', sans-serif;
+	width: 100%;
+}
+
+main{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.search{
+	display: flex;
+	flex-direction: row;
+}
+
+#submit{
+
+}
+
+.current_weather{
+	display: flex;
+	flex-direction: row;
+}
+
+#hour_update{
+	flex-direction: column;
+	font-family: 'Saira Extra Condensed',sans-serif;
+}
