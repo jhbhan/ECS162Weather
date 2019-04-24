@@ -32,7 +32,7 @@ main{
 	flex-direction: row;
 }
 
-#hour_update{
+.hour_update{
 	flex-direction: column;
 	font-family: 'Saira Extra Condensed',sans-serif;
 }
