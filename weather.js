@@ -6,11 +6,48 @@ function createCORSRequest(method, url) {
 }
 
 function updateHTML(object){
-	var time = document.getElementById('current_time');
-	var picture = document.getElementById('current_picture');
-	var temperature = document.getElementById('current_temperature');
+	//update current
+	let picture = document.getElementById('current_picture');
+	let temperature = document.getElementById('current_temperature');
+	var date = new Date;
+	var weatherClass = "current_weather";
+	updateTime(date, weatherClass);
+	temperature.textContent= Math.round(object.list[0].main.temp);
+}
 
-	temperature.innerText = object[main][temp];
+function updateTime(date, weatherClass){
+	if (weatherClass == "current_weather"){
+		var hours = date.getHours();
+  		var hours = hours % 24;
+  		var ampm = 'AM';
+  		if (hours == 0){
+    		hours = 12;
+  		}
+  		else if(hours > 12){
+    		ampm = 'PM';
+    		hours = hours - 12;
+  		}
+		var strTime = hours + ampm;
+		let currentTime = document.getElementById(current_time);
+  		currentTime.textContent = strTime;
+	}
+	else if(weatherClass == "hour_update"){
+		for (let i = 1; i < 6; i++) {
+			var hours = date.getHours() + i;
+  			var hours = hours % 24;
+  			var ampm = 'AM';
+  			if (hours == 0){
+    				hours = 12;
+  			}
+  			else if(hours > 12){
+    				ampm = 'PM';
+    				hours = hours - 12;
+  			}
+			var strTime = hours + ampm;
+			let currentTime = document.getElementById("time{i}").children[0];
+  			currentTime.textContent = strTime;
+		}
+	}
 }
 
 function newRequest() {
@@ -29,7 +66,6 @@ function newRequest() {
 		console.log(JSON.stringify(object, undefined, 2));
 
 		updateHTML(object);
-
 	};
 	request.onerror = function(){
 		alert('Woops, there was an error');
