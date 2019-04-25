@@ -12,16 +12,19 @@
 
 <body>
 	<header>
-		<div>
-			<p style="color:white">Local Weather Six Hour Forecast</p>
-			<p>Northern California with doppler radar</p>
+		<div class = "words">
+			<p style="font-size: 45pt;">Local Weather Six Hour Forecast</p>
+			<p style="font-size: 33pt; color:rgb(98,59,156)">Northern California with doppler radar</p>
 			<div class="search">
-				<p>Forecast for</p>
+				<p style="font-size:22pt">Forecast for</p>
 				<input id="city" type="text" name="location" placeholder="Davis">
 				<button id = "submit" onclick="newRequest()">submit</button>
 			</div>
 			<div class = "current_weather">
-				<p id = "current_time">time</p>
+				<div class = "times">
+						<p>current</p>
+						<p id = "current_time">time</p>
+				</div>
 				<img id = "current_picture">
 				<p id = "current_temperature">temperature</p>
 			</div>		
@@ -34,29 +37,29 @@
 	</header>
 	<main>
 		<div class="hour_update" id="time1">
-			<p>time</p>
+			<p id = "update_time">time</p>
 			<img id="weather_pic1">
-			<p>temperature</p>
+			<p id = "update_temp">temperature</p>
 		</div>
 		<div class="hour_update" id="time2">
-			<p>time</p>
+			<p id = "update_time">time</p>
 			<img id="weather_pic2">
-			<p>temperature</p>
+			<p id = "update_temp">temperature</p>
 		</div>
 		<div class="hour_update" id="time3">
-			<p>time</p>
+			<p id = "update_time">time</p>
 			<img id="weather_pic3">
-			<p>temperature</p>
+			<p id = "update_temp">temperature</p>
 		</div>
 		<div class="hour_update" id="time4">
-			<p>time</p>
+			<p id = "update_time"> time</p>
 			<img id="weather_pic4">
-			<p>temperature</p>
+			<p id = "update_temp">temperature</p>
 		</div>
 		<div class="hour_update" id="time5">
-			<p>time</p>
+			<p id = "update_time">time</p>
 			<img id="weather_pic5">
-			<p>temperature</p>
+			<p id = "update_temp">temperature</p>
 		</div>
 	</main>
 

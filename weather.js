@@ -3,6 +3,7 @@
 let imageArray = []  // global variable to hold stack of images for animation 
 let count = 0;          // global var
 let imageCounter = 0;
+let first_time = true;
 
 
 ////////////////////////////////////////////////
@@ -11,6 +12,7 @@ let imageCounter = 0;
 ////////////////////////////////////////////////
 ////////////////////////////////////////////////
 
+newRequest();
 
 function updateHTML(object){
 	//update current
@@ -135,8 +137,18 @@ function createCORSRequest(method, url) {
 	return request
 }
 function newRequest() {
-	let city = document.getElementById('city').value;
-	let url = "http://api.openweathermap.org/data/2.5/forecast/hourly?q=Davis,CA,US&units=imperial&APPID=9452c055be7dbf04b6ffb4fa9741a64a"
+
+	let city;
+
+	if (first_time){
+		city = "davis"
+		first_time = false;
+
+	}else{
+		city = document.getElementById("city").value;
+	}
+	
+	let url = "http://api.openweathermap.org/data/2.5/forecast/hourly?q="+city+",CA,US&units=imperial&APPID=9452c055be7dbf04b6ffb4fa9741a64a"
 		
 	let request = createCORSRequest('GET', url)
 
@@ -165,8 +177,6 @@ function newRequest() {
 getTenImages();
 
 function setImages(){
-	  console.log("in set images");
-	  console.log(imageArray[1]);
 	  var image = document.getElementById("img3");
 	  image.src = imageArray[imageCounter].src;
 	  if(imageCounter == 9){
