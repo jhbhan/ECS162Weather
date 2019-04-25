@@ -18,19 +18,26 @@ function updateHTML(object){
 	let picture = document.getElementById("current_picture");
 	let temperature = document.getElementById("current_temperature");
 	var date = new Date;
-	var weatherClass = "current_weather";
-	updateTime(date, weatherClass);
+	updateTime(date, "current_weather");
 	temperature.textContent= Math.round(object.list[0].main.temp);
+	weatherImage(object,0,"current_picture");
 
 	//update rest
+	//update time
 	updateTime(date, "hour_update")
 	//updateTemperature
 	for (let i = 1; i < 6; i++) {
 		let change_time = "time"+i;
 		let currentTemp = document.getElementById(change_time).children[2];
 		currentTemp.textContent = Math.round(object.list[i].main.temp);
-		
 	}
+	//updatePicture
+  	weatherImage(object,1,"weather_pic1");
+  	weatherImage(object,2,"weather_pic2");
+  	weatherImage(object,3,"weather_pic3");
+  	weatherImage(object,4,"weather_pic4");
+  	weatherImage(object,5,"weather_pic5");
+
 
 }
 
@@ -72,7 +79,8 @@ function updateTime(date, weatherClass){
 }
 
 
-function weatherImage(object,time,elementID){
+function weatherImage(object,time, elementID){
+
 	if(object.list[time].weather[0].icon == "01d"){
 	  //clear sky
 	  document.getElementById(elementID).src = "../assets/clearsky.svg";
