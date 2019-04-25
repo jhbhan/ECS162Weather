@@ -1,0 +1,115 @@
+@media only screen and (min-width: 768px) {
+	body{
+		display: flex;
+		flex-direction: column;
+	}
+
+	header{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		background-image: linear-gradient(rgb(73,138,220),rgb(98,59,156));
+		font-family: 'IBM Plex Sans', sans-serif;
+		width: 100%;
+		color: white;
+		border-spacing: 50%;
+	}
+
+	main{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	#city{
+		font-size: 20pt;
+	}
+	#submit{
+		font-size: 16p;
+	}
+
+	.search{
+		display: flex;
+		flex-direction: row;
+		max-height: 25pt;
+	}
+
+	.times{
+		font-size: 35pt;
+		display:flex;
+		flex-direction: column;
+	}
+
+	#img1{
+		position: absolute;
+		top: 5vh;
+		right: 10vh;
+		clip-path: circle(40%);
+		max-width: 30vw;
+		height: auto;
+	}
+	#img2{
+		position: absolute;
+		top: 5vh;
+		right: 10vh;
+		z-index: 1000;
+		clip-path: circle(40%);
+		max-width: 30vw;
+		height: auto;
+	}
+	#img3{
+		position: absolute;
+		top: 5vh;
+		right: 10vh;
+		z-index: 500;
+		clip-path: circle(40%);
+		max-width: 30vw;
+		height: auto;
+	}
+
+	.current_weather{
+		display: flex;
+		flex-direction: row;
+	}
+
+	#current_temperature{
+		font-size: 85pt;
+	}
+
+	.hour_update{
+		flex-direction: column;
+		font-family: 'Saira Extra Condensed',sans-serif;
+	}
+
+	#time1{
+		border-right: 1px;
+		border-right-color: grey;
+	}
+	#time2{
+		border-right: 1px;
+		border-right-color: grey;
+	}
+	#time3{
+		border-right: 1px;
+		border-right-color: grey;
+	}
+	#time4{
+		border-right: 1px;
+		border-right-color: grey;
+	}
+
+	#update_time{
+		font-size: 25pt;
+	}
+
+	#update_temp{
+		font-size: 75pt;
+	}
+}
+
+/*MOBILE*/
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+} 
+/*TABLET*/
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  }

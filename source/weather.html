@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+<head>
+	<title>Forecast</title>
+	<meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="weather.css">
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:300" rel = "stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,500" rel = "stylesheet">
+    
+
+</head>
+
+<body>
+	<header>
+		<div class = "words">
+			<p style="font-size: 45pt;">Local Weather Six Hour Forecast</p>
+			<p style="font-size: 33pt; color:rgb(98,59,156)">Northern California with doppler radar</p>
+			<div class="search">
+				<p style="font-size:22pt">Forecast for</p>
+				<input id="city" type="text" name="location" placeholder="Davis">
+				<button id = "submit" onclick="newRequest()">submit</button>
+			</div>
+			<div class = "current_weather">
+				<div class = "times">
+						<p>current</p>
+						<p id = "current_time">time</p>
+				</div>
+				<img id = "current_picture">
+				<p id = "current_temperature">temperature</p>
+			</div>		
+		</div>
+		<div class="picture">
+			<img id="img1"src="http://radar.weather.gov/ridge/Overlays/Topo/Short/DAX_Topo_Short.jpg">
+			<img id="img2"src="http://radar.weather.gov/ridge/Overlays/Cities/Short/DAX_City_Short.gif ">
+			<img id="img3" alt = "hi">
+		</div>
+	</header>
+	<main>
+		<div class="hour_update" id="time1">
+			<p id = "update_time">time</p>
+			<img id="weather_pic1">
+			<p id = "update_temp">temperature</p>
+		</div>
+		<div class="hour_update" id="time2">
+			<p id = "update_time">time</p>
+			<img id="weather_pic2">
+			<p id = "update_temp">temperature</p>
+		</div>
+		<div class="hour_update" id="time3">
+			<p id = "update_time">time</p>
+			<img id="weather_pic3">
+			<p id = "update_temp">temperature</p>
+		</div>
+		<div class="hour_update" id="time4">
+			<p id = "update_time"> time</p>
+			<img id="weather_pic4">
+			<p id = "update_temp">temperature</p>
+		</div>
+		<div class="hour_update" id="time5">
+			<p id = "update_time">time</p>
+			<img id="weather_pic5">
+			<p id = "update_temp">temperature</p>
+		</div>
+	</main>
+
+</body>
+
+<script src="weather.js"></script>
+
+</html>
