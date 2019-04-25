@@ -4,7 +4,6 @@ let imageArray = []  // global variable to hold stack of images for animation
 let count = 0;          // global var
 let imageCounter = 0;
 
-getImages();
 
 ////////////////////////////////////////////////
 //////////////////UPDATE HTML///////////////////
@@ -163,12 +162,8 @@ function newRequest() {
 //////////////DOPPLER IMAGE/////////////////////
 ////////////////////////////////////////////////
 
-function getImages(){
-	getTenImages();
-	console.log("got ten images");
-	setInterval(setImages(),5000);
-	console.log("leaving interval");
-}
+getTenImages();
+
 function setImages(){
 	  console.log("in set images");
 	  console.log(imageArray[1]);
@@ -190,6 +185,7 @@ function addToArray(newImage) {
 		count = count+1;
 		if (count >= 10) {
 			console.log("Got 10 doppler images");
+			setInterval(setImages,80);
 		}
 	}
 }
