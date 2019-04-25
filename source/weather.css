@@ -4,6 +4,7 @@
 		flex-direction: column;
 	}
 
+
 	header{
 		display: flex;
 		flex-direction: row;
@@ -20,25 +21,54 @@
 		flex-direction: row;
 		justify-content: space-between;
 	}
-
+	.words{
+		display: flex;
+		flex-flow: row wrap;
+		flex-direction: column;
+		padding-left: 10vw;
+		padding-top: 7vw;
+		margin-bottom: 10vw;
+	}
+  #title{
+		font-size: 3.5vw;
+	}
+	#cal{
+		font-size: 2.5vw;
+		color:rgb(98,59,156);
+	}
+	#search{
+		padding-top: 2vw;
+		font-size: 1.5vw;
+	}
 	#city{
-		font-size: 20pt;
+		margin-left: 1vw;
+		padding-right: 5vw;
 	}
 	#submit{
-		font-size: 16p;
+		margin-left: 1vw;
 	}
-
-	.search{
+	.current{
 		display: flex;
+		flex-flow: row wrap;
 		flex-direction: row;
-		max-height: 25pt;
+		margin-top: 4vw;
+		font-size: 3vw;
+	}
+	#time{
+		margin-right: 5vw;
+		padding-left: 2vw;
+		font-size: 2vw;
+		line-height: 3vw;
+	}
+	#current_picture{
+		margin-right: 7vw;
 	}
 
-	.times{
+	/* .times{
 		font-size: 35pt;
 		display:flex;
 		flex-direction: column;
-	}
+	} */
 
 	#img1{
 		position: absolute;
@@ -67,14 +97,14 @@
 		height: auto;
 	}
 
-	.current_weather{
+	/* .current_weather{
 		display: flex;
 		flex-direction: row;
 	}
 
 	#current_temperature{
 		font-size: 85pt;
-	}
+	} */
 
 	.hour_update{
 		flex-direction: column;
@@ -109,7 +139,16 @@
 
 /*MOBILE*/
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-} 
+	#img1{
+		display: none;
+	}
+	#img2{
+		display: none;
+	}
+	#img3{
+		display: none;
+	}
+}
 /*TABLET*/
 @media only screen and (min-width: 481px) and (max-width: 767px) {
   }

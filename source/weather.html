@@ -3,33 +3,39 @@
 <head>
 	<title>Forecast</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="weather.css">
+		<link rel="stylesheet" type="text/css" href="reset.css">
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:300" rel = "stylesheet">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,500" rel = "stylesheet">
-
-
 </head>
 
 <body>
 	<header>
 		<div class = "words">
-			<p style="font-size: 45pt;">Local Weather Six Hour Forecast</p>
-			<p style="font-size: 33pt; color:rgb(98,59,156)">Northern California with doppler radar</p>
-			<div class="search">
+			<p id = "title">Local Weather Six Hour Forecast</p>
+			<p id = "cal">Northern California with doppler radar</p>
+			<p id = "search">Forecast for <input id="city" type="text" name="location" placeholder="Davis">
+			<button id = "submit" onclick="newRequest()">submit</button> </p>
+			<div class = "current">
+					<p id= "time">current<br> <span id= "current_time"></span></p>
+			<img id = "current_picture">
+			<p id = "current_temperature">temperature</p>
+			</div>
+		</div>
+			<!-- <div class="search">
 				<p style="font-size:22pt">Forecast for</p>
 				<input id="city" type="text" name="location" placeholder="Davis">
 				<button id = "submit" onclick="newRequest()">submit</button>
-			</div>
-			<div class = "current_weather">
+			</div> -->
+			<!-- <div class = "current_weather">
 				<div class = "times">
 						<p>current</p>
 						<p id = "current_time">time</p>
 				</div>
 				<img id = "current_picture">
 				<p id = "current_temperature">temperature</p>
-			</div>		
-		</div>
+			</div>
+		</div> -->
 		<div class="picture">
 			<img id="img1"src="http://radar.weather.gov/ridge/Overlays/Topo/Short/DAX_Topo_Short.jpg">
 			<img id="img2"src="http://radar.weather.gov/ridge/Overlays/Cities/Short/DAX_City_Short.gif ">
