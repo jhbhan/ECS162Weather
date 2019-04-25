@@ -4,22 +4,34 @@ let imageArray = []  // global variable to hold stack of images for animation
 let count = 0;          // global var
 let imageCounter = 0;
 
-getImages();
+//getImages();
 
-function createCORSRequest(method, url) {
-	let request = new XMLHttpRequest();
-	request.open(method,url,true);
-	return request
-}
+////////////////////////////////////////////////
+//////////////////UPDATE HTML///////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+
 
 function updateHTML(object){
 	//update current
-	let picture = document.getElementById('current_picture');
-	let temperature = document.getElementById('current_temperature');
+	let picture = document.getElementById("current_picture");
+	let temperature = document.getElementById("current_temperature");
 	var date = new Date;
 	var weatherClass = "current_weather";
 	updateTime(date, weatherClass);
 	temperature.textContent= Math.round(object.list[0].main.temp);
+
+	//update rest
+	updateTime(date, "hour_update")
+	//updateTemperature
+	for (let i = 1; i < 6; i++) {
+		let change_time = "time"+i;
+		let currentTemp = document.getElementById(change_time).children[2];
+		currentTemp.textContent = Math.round(object.list[i].main.temp);
+		
+	}
+
 }
 
 function updateTime(date, weatherClass){
@@ -35,7 +47,7 @@ function updateTime(date, weatherClass){
     		hours = hours - 12;
   		}
 		var strTime = hours + ampm;
-		let currentTime = document.getElementById(current_time);
+		let currentTime = document.getElementById("current_time");
   		currentTime.textContent = strTime;
 	}
 	else if(weatherClass == "hour_update"){
@@ -51,12 +63,71 @@ function updateTime(date, weatherClass){
     				hours = hours - 12;
   			}
 			var strTime = hours + ampm;
-			let currentTime = document.getElementById("time{i}").children[0];
+			console.log("here");
+			let change_time = "time"+i;
+			let currentTime = document.getElementById(change_time).children[0];
   			currentTime.textContent = strTime;
 		}
 	}
 }
 
+
+function weatherImage(object,time,elementID){
+	if(object.list[time].weather[0].icon == "01d"){
+	  //clear sky
+	  document.getElementById(elementID).src = "../assets/clearsky.svg";
+	}
+	else if(object.list[time].weather[0].icon == "01n"){
+	  document.getElementById(elementID).src = "../assets/clear-night.svg";
+	}
+	else if(object.list[time].weather[0].icon == "02d"){
+	  document.getElementById(elementID).src = "../assets/fewclouds-day.svg";
+	}
+	else if(object.list[time].weather[0].icon == "02n"){
+	  document.getElementById(elementID).src = "../assets/fewclouds-night.svg";
+	}
+	else if(object.list[time].weather[0].icon == "03d"){
+	  //scattered clouds
+	  document.getElementById(elementID).src = "../assets/scatteredclouds.svg";
+	}
+	else if(object.list[time].weather[0].icon == "0dd"){
+	  //scattered clouds
+	  document.getElementById(elementID).src = "../assets/brokenclouds.svg";
+	}
+	else if(object.list[time].weather[0].icon == "09d"){
+	  //drizzle
+	  document.getElementById(elementID).src = "../assets/showerrain.svg";
+	}
+	else if(object.list[time].weather[0].icon == "10d"){
+	  //Rain
+	  document.getElementById(elementID).src = "../assets/rain-day.svg";
+	}
+	else if(object.list[time].weather[0].icon == "10n"){
+	  //Rain
+	  document.getElementById(elementID).src = "../assets/rain-night.svg";
+	}
+	else if(object.list[time].weather[0]=="11d"){
+	  //thunderstorm
+	  document.getElementById(elementID).src = "../assets/thunderstorms.svg";
+	}
+	else if(object.list[time].weather[0].icon == "13d"){
+	  //Snow
+	  document.getElementById(elementID).src = "../assets/snow.svg";
+	}
+	else if(object.list[time].weather[0].icon == "50d"){
+	  //atmosphere
+	  document.getElementById(elementID).src = "../assets/mist.svg";
+	}
+  }
+////////////////////////////////////////////////
+//////////////API CALL//////////////////////////
+////////////////////////////////////////////////
+
+function createCORSRequest(method, url) {
+	let request = new XMLHttpRequest();
+	request.open(method,url,true);
+	return request
+}
 function newRequest() {
 	let city = document.getElementById('city').value;
 	let url = "http://api.openweathermap.org/data/2.5/forecast/hourly?q=Davis,CA,US&units=imperial&APPID=9452c055be7dbf04b6ffb4fa9741a64a"
@@ -80,6 +151,10 @@ function newRequest() {
 	request.send();
 //run makeCORSRequest when the script files executed
 }
+
+////////////////////////////////////////////////
+//////////////DOPPLER IMAGE/////////////////////
+////////////////////////////////////////////////
 
 function getImages(){
 	getTenImages();
